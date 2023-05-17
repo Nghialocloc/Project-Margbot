@@ -6,33 +6,71 @@ public class ChangeMagnet : MonoBehaviour
 {
 
     [Header("Magnet property")]
-    [SerializeField] private bool isStatic = false;
+    [SerializeField] private bool isAttract;
+
     [SerializeField] private SpriteRenderer magnetColor;
+    [SerializeField] private Sprite magnetBlue;
+    [SerializeField] private Sprite magnetRed;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        magnetColor = GetComponent<SpriteRenderer>();
-    }
+    [Header("Force property")]
+    [SerializeField] private AreaEffector2D forceField;
 
-    // Update is called once per frame
-    void Update()
+    [Header("Effect color")]
+    [SerializeField] private GameObject forceBlue;
+    [SerializeField] private GameObject forceRed;
+
+    private void Start()
     {
-        if (Input.GetButtonDown("ChangeMagnet") && !PauseMenu.isPause)
+        if (isAttract)
         {
-            ChangeState();
-        }
-    }
-
-    private void ChangeState()
-    {
-        if (!isStatic)
-        {
-            isStatic = true;
+            magnetColor.sprite = magnetRed;
+            forceBlue.SetActive(false);
+            forceRed.SetActive(true);
+            forceRed.GetComponent<ParticleSystem>().Play();
+            RotateField();
+            isAttract = false;
         }
         else
         {
-            isStatic = false;
+            magnetColor.sprite = magnetBlue;
+            forceRed.SetActive(false);
+            forceBlue.SetActive(true);
+            forceBlue.GetComponent<ParticleSystem>().Play();
+            isAttract = true;
+        }
+    }
+
+    public void ChangeState()
+    {
+        if (isAttract)
+        {
+            magnetColor.sprite = magnetRed;
+            forceBlue.SetActive(false);
+            forceRed.SetActive(true);
+            forceRed.GetComponent<ParticleSystem>().Play();
+            RotateField();
+            isAttract = false;
+        }
+        else
+        {
+            magnetColor.sprite = magnetBlue;
+            forceRed.SetActive(false);
+            forceBlue.SetActive(true);
+            forceBlue.GetComponent<ParticleSystem>().Play();
+            RotateField();
+            isAttract = true;
+        }
+    }
+
+    private void RotateField()
+    {
+        if(forceField.forceAngle >= 180)
+        {
+            forceField.forceAngle = forceField.forceAngle - 180;
+        }
+        else
+        {
+            forceField.forceAngle = forceField.forceAngle + 180;
         }
     }
 }
