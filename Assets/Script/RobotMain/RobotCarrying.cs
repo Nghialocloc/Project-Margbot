@@ -8,7 +8,6 @@ public class RobotCarrying : MonoBehaviour
     [Header("Pick up magnet")]
     [SerializeField] private bool isTouchingMagnet = false;
     [SerializeField] private bool isCarryingMagnet = false;
-    [SerializeField] private bool isInogreMagnet = false;
     [SerializeField] private Transform detectPoint;
     [SerializeField] private float detectRange = 0.2f;
 
@@ -23,7 +22,6 @@ public class RobotCarrying : MonoBehaviour
     {
         if (collision.gameObject.tag == "Magnet")
         {
-            isInogreMagnet = true;
             Physics2D.IgnoreCollision(magnetCollider,robotCollider);
             Physics2D.IgnoreCollision(magnetCollider, checkCollider);
         }
