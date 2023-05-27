@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActivatePlatform : MonoBehaviour
+public class TeleportPlatform : MonoBehaviour
 {
     [Header("Moving property")]
     [SerializeField] private Transform positionA;
     [SerializeField] private Transform positionB;
     [SerializeField] private float moveSpeed;
     [SerializeField] private bool isMoving = false;
-    [SerializeField] private bool isatpointA = false;
     Vector3 targetPos; 
 
     private RobotMovement movementControl;
@@ -25,37 +24,42 @@ public class ActivatePlatform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        targetPos = positionA.position;
+        targetPos = positionB.position;
         DirectionCaculate();
     }
 
     public void MovePlatform()
     {
-        rbPlatform.velocity = moveDirection * moveSpeed;
+        if (!isMoving)
+        {
+            isMoving = true;
+            while (Vector2.Distance(transform.position, targetPos) > 0)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed);  
+            }
+            isMoving = false;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        // If platfrom is moving toward A point, check mark that it's in A
-        if ((Vector2.Distance(transform.position, positionA.position) < 0.1f) && !isatpointA)
+        if (Vector2.Distance(transform.position, positionA.position) < 0.1f)
         {
             targetPos = positionB.position;
             DirectionCaculate();
-            rbPlatform.velocity = Vector2.zero;
-            isatpointA = true;
         }
 
-        // And reverse if it's move toward B point
-        else if ((Vector2.Distance(transform.position, positionB.position) < 0.1f) && isatpointA)
+        else if (Vector2.Distance(transform.position, positionB.position) < 0.1f)
         {
             targetPos = positionA.position;
             DirectionCaculate();
-            rbPlatform.velocity = Vector2.zero;
-            isatpointA = false;
         }
 
-        
+        if (Vector2.Distance(transform.position, targetPos) == 0)
+        {
+            rbPlatform.velocity = moveDirection * 0;
+        }
     }
 
     // Change the direction base on the target position

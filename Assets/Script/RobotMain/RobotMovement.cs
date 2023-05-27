@@ -96,7 +96,7 @@ public class RobotMovement : MonoBehaviour
             rb.velocity = Vector2.up * jumpForce;
         }
 
-        //makes you jump higher when you hold down space
+        //makes you jump higher when you hold down jump button
         if (Input.GetButton("Jump") && isJumping == true)
         {
 

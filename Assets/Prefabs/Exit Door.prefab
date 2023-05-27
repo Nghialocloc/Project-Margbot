@@ -164,11 +164,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf7021b29c49ba3469336aebf4773f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newLevelUnlock: 0
   isNearDoor: 0
   outLevelCheck: {fileID: 3325424147044522687}
   trasBoxWidth: 2.5
   trasBoxHeight: 3.5
-  onExitLevel: {fileID: 11400000, guid: d7c4672aec9ca7f4db4e9f08fcbcb426, type: 2}
+  winMenu: {fileID: 0}
+  pauseManager: {fileID: 0}
 --- !u!1 &3325424147044522686
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,7 +195,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3325424147044522686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.51, y: 0.04, z: 0}
+  m_LocalPosition: {x: 2.4, y: -0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

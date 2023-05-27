@@ -20,7 +20,7 @@ public class ChangeScene : MonoBehaviour
 
     public void ReturnFromSettings()
     {
-        SceneManager.LoadScene(currentScene);  
+        SceneManager.LoadScene(currentScene);
     }
 
     public void Quitgame()

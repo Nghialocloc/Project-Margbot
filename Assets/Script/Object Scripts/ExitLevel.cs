@@ -71,7 +71,8 @@ public class ExitLevel : MonoBehaviour
     [Header("Exit level poprety")]
     [SerializeField] private float trasBoxWidth;
     [SerializeField] private float trasBoxHeight;
-    [SerializeField] public GameEvent onExitLevel;
+    [SerializeField] public GameObject winMenu;
+    [SerializeField] public GameObject pauseManager;
 
     // Make the transfet box 
     private void CheckExitBox()
@@ -79,9 +80,15 @@ public class ExitLevel : MonoBehaviour
         Collider2D[] collision = Physics2D.OverlapBoxAll(outLevelCheck.position, new Vector2(trasBoxWidth, trasBoxHeight), 0);
         foreach(Collider2D hit in collision)
         {
+            if (hit.gameObject.CompareTag("Magnet"))
+            {
+                hit.gameObject.SetActive(false);
+            }
             if (hit.gameObject.CompareTag("Player"))
             {
-                onExitLevel.Call();
+                hit.gameObject.SetActive(false);
+                pauseManager.SetActive(false);
+                winMenu.SetActive(true);
                 PlayerPrefs.SetInt("levelReached", newLevelUnlock);
             }
         }

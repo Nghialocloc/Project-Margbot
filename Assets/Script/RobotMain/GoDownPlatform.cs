@@ -7,13 +7,14 @@ public class GoDownPlatform : MonoBehaviour
     private GameObject oneWayPlatform;
     [SerializeField] private BoxCollider2D playerCollision;
     [SerializeField] private BoxCollider2D groundcheckCollision;
+    [SerializeField] private FixedJoint2D carryMagnet;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("GoDown"))
         {
-            if (oneWayPlatform != null)
+            if (oneWayPlatform != null && carryMagnet.enabled == false)
             {
                 StartCoroutine(DisableCollision());
             }

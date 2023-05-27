@@ -40,6 +40,8 @@ public class RobotCarrying : MonoBehaviour
             isTouchingMagnet = false;
         }
 
+        //CheckNearMagnet();
+
         // Press to enable Fixjoint and grab the magnet
         if (Input.GetButtonDown("GrabMagnet") && !PauseMenu.isPause)
         {
@@ -48,18 +50,39 @@ public class RobotCarrying : MonoBehaviour
                 GetComponent<FixedJoint2D>().enabled = true;
                 GetComponent<FixedJoint2D>().connectedBody = Magnet;
                 Magnet.gravityScale = 1.5f;
+                Magnet.mass = 1;
              }
 
             if (isCarryingMagnet)
             {
                 GetComponent<FixedJoint2D>().enabled = false;
                 Magnet.gravityScale = 3;
+                Magnet.mass = 5;
             }
         }
 
         CheckCarryingMagnet();
     }
 
+    private void CheckNearMagnet()
+    {
+        Collider2D[] pickUpInfo = Physics2D.OverlapCircleAll(detectPoint.position, detectRange);
+        foreach(Collider2D something in pickUpInfo)
+        {
+            if(something.GetComponent<Collider2D>() != null && something.GetComponent<Collider2D>().gameObject.tag == "Magnet")
+        {
+                isTouchingMagnet = true;
+                Debug.Log("Yes");
+            }
+            else
+            {
+                isTouchingMagnet = false;
+                Debug.Log("No");
+            }
+        }
+    }
+
+    // Show the pick up range on unity
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(detectPoint.position ,detectRange);

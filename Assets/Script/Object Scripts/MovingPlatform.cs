@@ -8,7 +8,7 @@ public class MovingPlatform : MonoBehaviour
     [SerializeField] private Transform positionA;
     [SerializeField] private Transform positionB;
     [SerializeField] private float moveSpeed;
-    Vector3 targetPos;
+    [HideInInspector] public Vector3 targetPos;
 
     private RobotMovement movementControl;
     private Rigidbody2D rbPlatform;
