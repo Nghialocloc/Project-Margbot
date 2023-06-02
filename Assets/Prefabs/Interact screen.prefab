@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9034714299608684486}
   - component: {fileID: 9034714299608684487}
   - component: {fileID: 9034714299608684483}
-  - component: {fileID: 9034714299608684484}
+  - component: {fileID: 6943564153369782916}
   m_Layer: 0
   m_Name: Interact screen
   m_TagString: Untagged
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -703470695
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 1361857682, guid: 7f926baa10c4df147a77970783273750, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -156,7 +156,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &9034714299608684484
+--- !u!114 &6943564153369782916
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9034714299608684505}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98e6eb7033f18f243bc67f6b315ffd3c, type: 3}
+  m_Script: {fileID: 11500000, guid: 56a3cd34cdd20224fbdbb9ec15c6a560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   onActivate: {fileID: 0}

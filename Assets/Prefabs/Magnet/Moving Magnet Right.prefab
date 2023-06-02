@@ -186,6 +186,7 @@ MonoBehaviour:
   positionA: {fileID: 1543983677869981855}
   positionB: {fileID: 1543983679554932689}
   moveSpeed: 8
+  targetPos: {x: 0, y: 0, z: 0}
 --- !u!114 &1543983678047762396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9981,7 +9982,7 @@ AreaEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   m_UseGlobalAngle: 0
   m_ForceAngle: 270
   m_ForceMagnitude: 1000

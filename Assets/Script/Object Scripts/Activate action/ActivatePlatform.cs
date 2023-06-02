@@ -8,7 +8,6 @@ public class ActivatePlatform : MonoBehaviour
     [SerializeField] private Transform positionA;
     [SerializeField] private Transform positionB;
     [SerializeField] private float moveSpeed;
-    [SerializeField] private bool isMoving = false;
     [SerializeField] private bool isatpointA = false;
     Vector3 targetPos; 
 

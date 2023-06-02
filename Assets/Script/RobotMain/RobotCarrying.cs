@@ -14,16 +14,15 @@ public class RobotCarrying : MonoBehaviour
     [Header("Component")]
     [SerializeField] private BoxCollider2D robotCollider;
     [SerializeField] private BoxCollider2D checkCollider;
-    [SerializeField] private BoxCollider2D magnetCollider;
-    [SerializeField] public Rigidbody2D Magnet;
+    [SerializeField] private Rigidbody2D Magnet = null;
 
     // Player can not collide with the magnet
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Magnet")
         {
-            Physics2D.IgnoreCollision(magnetCollider,robotCollider);
-            Physics2D.IgnoreCollision(magnetCollider, checkCollider);
+            Physics2D.IgnoreCollision(collision.collider, robotCollider);
+            Physics2D.IgnoreCollision(collision.collider, checkCollider);
         }
     }
 
@@ -34,13 +33,13 @@ public class RobotCarrying : MonoBehaviour
         if (pickupInfo.collider != null && pickupInfo.collider.gameObject.tag == "Magnet")
         {
             isTouchingMagnet = true;
+            Magnet = pickupInfo.collider.gameObject.GetComponent<Rigidbody2D>();
         }
         else
         {
             isTouchingMagnet = false;
+            Magnet = null;
         }
-
-        //CheckNearMagnet();
 
         // Press to enable Fixjoint and grab the magnet
         if (Input.GetButtonDown("GrabMagnet") && !PauseMenu.isPause)
@@ -49,6 +48,7 @@ public class RobotCarrying : MonoBehaviour
             {
                 GetComponent<FixedJoint2D>().enabled = true;
                 GetComponent<FixedJoint2D>().connectedBody = Magnet;
+                Magnet.GetComponent<TrajectoryLine>().enabled = true;
                 Magnet.gravityScale = 1.5f;
                 Magnet.mass = 1;
              }
@@ -56,30 +56,13 @@ public class RobotCarrying : MonoBehaviour
             if (isCarryingMagnet)
             {
                 GetComponent<FixedJoint2D>().enabled = false;
+                Magnet.GetComponent<TrajectoryLine>().enabled = false;
                 Magnet.gravityScale = 3;
-                Magnet.mass = 5;
+                Magnet.mass = 3;
             }
         }
 
         CheckCarryingMagnet();
-    }
-
-    private void CheckNearMagnet()
-    {
-        Collider2D[] pickUpInfo = Physics2D.OverlapCircleAll(detectPoint.position, detectRange);
-        foreach(Collider2D something in pickUpInfo)
-        {
-            if(something.GetComponent<Collider2D>() != null && something.GetComponent<Collider2D>().gameObject.tag == "Magnet")
-        {
-                isTouchingMagnet = true;
-                Debug.Log("Yes");
-            }
-            else
-            {
-                isTouchingMagnet = false;
-                Debug.Log("No");
-            }
-        }
     }
 
     // Show the pick up range on unity
