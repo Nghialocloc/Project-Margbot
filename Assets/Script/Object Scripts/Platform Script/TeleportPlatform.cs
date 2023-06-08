@@ -24,7 +24,7 @@ public class TeleportPlatform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        targetPos = positionB.position;
+        targetPos = positionA.position;
         DirectionCaculate();
     }
 
@@ -33,7 +33,7 @@ public class TeleportPlatform : MonoBehaviour
         if (!isMoving)
         {
             isMoving = true;
-            while (Vector2.Distance(transform.position, targetPos) > 0)
+            while (Vector2.Distance(transform.position, targetPos) > 0.1f)
             {
                 transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed);  
             }

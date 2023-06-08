@@ -296,10 +296,10 @@ AreaEffector2D:
     m_Bits: 192
   m_UseGlobalAngle: 0
   m_ForceAngle: 270
-  m_ForceMagnitude: 200
+  m_ForceMagnitude: 1000
   m_ForceVariation: 0
   m_ForceTarget: 0
-  m_Drag: 5
+  m_Drag: 100
   m_AngularDrag: 0
 --- !u!1 &7555340300381400961
 GameObject:

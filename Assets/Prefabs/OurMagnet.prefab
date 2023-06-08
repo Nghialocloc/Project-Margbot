@@ -74,9 +74,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 84811723
-  m_SortingLayer: -1
-  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 2a0e4fceae1dfdc419ecb05cee60d049, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -255,5 +255,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   throwPower: 0.75
   magnetJoin: {fileID: 0}
-  gravityMutiple: 2
-  velocityDiv: 1
+  maxDistance: {x: 30, y: 100}
+  gravityMutiple: 3
+  velocityDiv: 1.25

@@ -229,8 +229,7 @@ MonoBehaviour:
   positionA: {fileID: 148774562309277725}
   positionB: {fileID: 148774562616582446}
   moveSpeed: 7
-  isMoving: 0
-  isatpointA: 0
+  isatpointA: 1
 --- !u!1 &148774562604956085
 GameObject:
   m_ObjectHideFlags: 0

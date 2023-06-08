@@ -8,6 +8,7 @@ public class RobotMovement : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField] private BoxCollider2D checkCollision;
     [SerializeField] [Range(0.1f, 0.3f)] private float rayBuffer = 0.2f;
+    public static bool isDead = false;
 
     [Header("Moving")]
     [SerializeField] private float speed = 10;
@@ -35,6 +36,7 @@ public class RobotMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        isDead = false;
     }
 
     //Moves player on x axis
@@ -54,9 +56,25 @@ public class RobotMovement : MonoBehaviour
     void Update()
     {
         controlMovement();
+        CharacterStuck();
     }
 
-    #region
+    private bool isGround()
+    {
+        return Physics2D.BoxCast(checkCollision.bounds.center, checkCollision.bounds.size, 0f, Vector2.down, rayBuffer, jumpableGround);
+    }
+
+    //Check if the character being stuck between the box and map
+
+    private void CharacterStuck()
+    {
+        if (isGround() && CellingChecker.isHitCelling)
+        {
+            isDead = true;
+        }
+    }
+
+    #region Movement
 
     private void controlMovement()
     {
@@ -113,9 +131,6 @@ public class RobotMovement : MonoBehaviour
         }
     }
 
-    private bool isGround()
-    {
-        return Physics2D.BoxCast(checkCollision.bounds.center, checkCollision.bounds.size, 0f, Vector2.down, rayBuffer, jumpableGround);
-    }
     #endregion
+
 }

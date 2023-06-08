@@ -7,6 +7,8 @@ public class TrajectoryLine : MonoBehaviour
     [Header("Throw property")]
     [SerializeField] [Range(0.1f, 1.5f)] private float throwPower = 1f;
     [SerializeField] private FixedJoint2D magnetJoin;
+    [SerializeField] private Vector2 maxDistance;
+    private Vector2 distanceThrow;
 
     [Header("Change the curve of the line")]
     [SerializeField] private float gravityMutiple = 3;
@@ -35,7 +37,20 @@ public class TrajectoryLine : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             Vector2 DragEndPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 velocityThrow = (DragEndPos - DragStartPos) * throwPower;
+            distanceThrow = DragEndPos - DragStartPos;
+            if (distanceThrow.x > maxDistance.x)
+            {
+                distanceThrow.x = maxDistance.x;
+            }
+            if (distanceThrow.x < -maxDistance.x)
+            {
+                distanceThrow.x = -maxDistance.x;
+            }
+            if (distanceThrow.y > maxDistance.y)
+            {
+                distanceThrow.y = maxDistance.y;
+            }
+            Vector2 velocityThrow = (distanceThrow) * throwPower;
 
             Vector2[] trajectory = PlotPoint(magnetBody, (Vector2)transform.position, velocityThrow, 300);
             lineShow.positionCount = trajectory.Length;
@@ -51,7 +66,7 @@ public class TrajectoryLine : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             Vector2 DragEndPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 velocityThrow = (DragEndPos - DragStartPos) * throwPower / velocityDiv;
+            Vector2 velocityThrow = (distanceThrow) * throwPower / velocityDiv;
 
             //Loai bo join cua Magnet va khoa trajectory 
             magnetJoin.enabled = false;

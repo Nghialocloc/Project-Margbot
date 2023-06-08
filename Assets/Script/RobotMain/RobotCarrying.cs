@@ -7,14 +7,14 @@ public class RobotCarrying : MonoBehaviour
 {
     [Header("Pick up magnet")]
     [SerializeField] private bool isTouchingMagnet = false;
-    [SerializeField] private bool isCarryingMagnet = false;
+    [SerializeField] public bool isCarryingMagnet = false;
     [SerializeField] private Transform detectPoint;
     [SerializeField] private float detectRange = 0.2f;
 
     [Header("Component")]
     [SerializeField] private BoxCollider2D robotCollider;
     [SerializeField] private BoxCollider2D checkCollider;
-    [SerializeField] private Rigidbody2D Magnet = null;
+    [SerializeField] private Rigidbody2D Magnet;
 
     // Player can not collide with the magnet
     private void OnCollisionEnter2D(Collision2D collision)
@@ -33,12 +33,10 @@ public class RobotCarrying : MonoBehaviour
         if (pickupInfo.collider != null && pickupInfo.collider.gameObject.tag == "Magnet")
         {
             isTouchingMagnet = true;
-            Magnet = pickupInfo.collider.gameObject.GetComponent<Rigidbody2D>();
         }
         else
         {
             isTouchingMagnet = false;
-            Magnet = null;
         }
 
         // Press to enable Fixjoint and grab the magnet
@@ -55,8 +53,8 @@ public class RobotCarrying : MonoBehaviour
 
             if (isCarryingMagnet)
             {
-                GetComponent<FixedJoint2D>().enabled = false;
                 Magnet.GetComponent<TrajectoryLine>().enabled = false;
+                GetComponent<FixedJoint2D>().enabled = false;
                 Magnet.gravityScale = 3;
                 Magnet.mass = 3;
             }
