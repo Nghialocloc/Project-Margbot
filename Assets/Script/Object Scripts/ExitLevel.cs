@@ -90,6 +90,8 @@ public class ExitLevel : MonoBehaviour
                 pauseManager.SetActive(false);
                 winMenu.SetActive(true);
                 PlayerPrefs.SetInt("levelReached", newLevelUnlock);
+                AudioManager.Instance.musicSource.Stop();
+                AudioManager.Instance.PlaySfx("LevelComplete");
             }
         }
     }

@@ -16,7 +16,7 @@ public class ActivateScreen : MonoBehaviour
         }
     }
 
-    // If player near the panel, enable interact
+    // If player near the panel, enable interact with it
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Magnet"))
@@ -28,6 +28,12 @@ public class ActivateScreen : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        Collider2D[] check = Physics2D.OverlapBoxAll(gameObject.transform.position, new Vector2(1.5f, 1), 0);
         isInteract = false;
+        foreach (Collider2D hit in check)
+        {
+            if (hit.gameObject.CompareTag("Magnet") || hit.gameObject.CompareTag("Player"))
+                isInteract = true;
+        }
     }
 }

@@ -112,6 +112,7 @@ public class RobotMovement : MonoBehaviour
             isJumping = true;
             jumpTimeCounter = jumpTime;
             rb.velocity = Vector2.up * jumpForce;
+            AudioManager.Instance.PlaySfx("Jump");
         }
 
         //makes you jump higher when you hold down jump button

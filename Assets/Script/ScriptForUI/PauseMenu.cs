@@ -52,6 +52,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         isPause = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        AudioManager.Instance.PlayMusic("Theme");
     }
 
     public void ToTheTilte()
@@ -59,5 +60,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         isPause = false;
         SceneManager.LoadScene("Title Scene");
+        AudioManager.Instance.PlayMusic("MainMenu");
     }
 }

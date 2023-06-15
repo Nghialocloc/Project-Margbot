@@ -25,8 +25,8 @@ public class ChangeScene : MonoBehaviour
 
     public void Quitgame()
     {
-        PlayerPrefs.SetInt("levelReached", 1);
         Application.Quit();
         Debug.Log("Out of the game");
+        PlayerPrefs.SetInt("levelReached", 1);
     }
 }

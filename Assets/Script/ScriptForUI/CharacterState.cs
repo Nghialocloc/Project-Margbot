@@ -17,7 +17,11 @@ public class CharacterState : MonoBehaviour
         if (RobotMovement.isDead)
         {
             playerCharacter.SetActive(false);
-            Invoke("ResetLevel", 2);
+            AudioManager.Instance.musicSource.Stop();
+            AudioManager.Instance.PlaySfx("GameOver");
+            Debug.Log("Die");
+            Invoke("ResetLevel", 3);
+            AudioManager.Instance.PlayMusic("Theme");
         }
     }
 

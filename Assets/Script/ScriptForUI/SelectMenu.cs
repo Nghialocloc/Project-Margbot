@@ -24,5 +24,6 @@ public class SelectMenu : MonoBehaviour
     public void LevelSelect(int level)
     {
         SceneManager.LoadScene("Level " + level.ToString());
+        AudioManager.Instance.PlayMusic("Theme");
     }
 }

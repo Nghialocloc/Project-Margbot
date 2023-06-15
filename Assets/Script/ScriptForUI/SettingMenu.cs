@@ -1,21 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class SettingMenu : MonoBehaviour
 {
-    [SerializeField] private AudioMixer music;
-    [SerializeField] private AudioMixer effect;
+    public Slider musicSlider, sfxSlider;
 
-    public void SetSoundEffect(float volume)
+    public void Start()
     {
-        music.SetFloat("SoundFV", volume);
+        musicSlider.value = PlayerPrefs.GetFloat("music",10);
+        sfxSlider.value = PlayerPrefs.GetFloat("sfx", 10);
     }
 
-    public void SetMusic(float volume)
+    public void MusicVolume()
     {
-        effect.SetFloat("MusicV", volume);
+        PlayerPrefs.SetFloat("music",musicSlider.value);
+        AudioManager.Instance.MusicVolume(musicSlider.value);
+    }
+
+    public void SfxVolume()
+    {
+        PlayerPrefs.SetFloat("sfx", sfxSlider.value);
+        AudioManager.Instance.SfxVolume(sfxSlider.value);
     }
 
     public void SetGraphic(int qualityIndex)

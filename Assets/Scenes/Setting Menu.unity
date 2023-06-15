@@ -155,8 +155,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1494533103}
-  - {fileID: 399926256}
   - {fileID: 1627922854}
+  - {fileID: 399926256}
   - {fileID: 476485046}
   m_Father: {fileID: 2002537507}
   m_RootOrder: 1
@@ -178,8 +178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811ea95b99f82cd40a16f419b6d7071b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: {fileID: 24100000, guid: 18f79bf3875ebe94c9fff42b0859e8a0, type: 2}
-  effect: {fileID: 24100000, guid: 18f79bf3875ebe94c9fff42b0859e8a0, type: 2}
+  musicSlider: {fileID: 444114344}
+  sfxSlider: {fileID: 688798813}
 --- !u!114 &27316342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -847,7 +847,7 @@ RectTransform:
   - {fileID: 457437401}
   - {fileID: 2024220980}
   m_Father: {fileID: 27316340}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1009,7 +1009,7 @@ GameObject:
   - component: {fileID: 444114343}
   - component: {fileID: 444114344}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: Music Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1082,17 +1082,17 @@ MonoBehaviour:
   m_FillRect: {fileID: 929668177}
   m_HandleRect: {fileID: 2117647723}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 20
-  m_WholeNumbers: 1
-  m_Value: 20
+  m_MinValue: 0
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 27316341}
         m_TargetAssemblyTypeName: SettingMenu, Assembly-CSharp
-        m_MethodName: SetMusic
-        m_Mode: 0
+        m_MethodName: MusicVolume
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1704,7 +1704,7 @@ GameObject:
   - component: {fileID: 688798812}
   - component: {fileID: 688798813}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: Sound Effect Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1777,17 +1777,17 @@ MonoBehaviour:
   m_FillRect: {fileID: 633566378}
   m_HandleRect: {fileID: 1145643908}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 20
-  m_WholeNumbers: 1
-  m_Value: 20
+  m_MinValue: 0
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 27316341}
         m_TargetAssemblyTypeName: SettingMenu, Assembly-CSharp
-        m_MethodName: SetSoundEffect
-        m_Mode: 0
+        m_MethodName: SfxVolume
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2974,7 +2974,7 @@ RectTransform:
   - {fileID: 2046586174}
   - {fileID: 907733296}
   m_Father: {fileID: 27316340}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

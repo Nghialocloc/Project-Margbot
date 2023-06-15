@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ClimbingLadder : MonoBehaviour
 {
+    [Header("Check Condition Components")]
     [SerializeField] private bool isNearLadder;
     [SerializeField] private bool isClimbing;
     [SerializeField] private bool isOccupie;
@@ -22,6 +23,7 @@ public class ClimbingLadder : MonoBehaviour
 
     private void Update()
     {
+        // If player near ladder and press up, allow climb
         verticalClimb = Input.GetAxis("Vertical");
         if (isNearLadder && Mathf.Abs(verticalClimb) >= 0f)
         {
@@ -31,6 +33,7 @@ public class ClimbingLadder : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // As long climing is true, disable gravity
         if (isClimbing)
         {
             rb.gravityScale = 0f;
@@ -42,6 +45,7 @@ public class ClimbingLadder : MonoBehaviour
         }
     }
 
+    // Make sure player can climb if holding object like magnet
     private void OnTriggerEnter2D(Collider2D collision)
     {
         isOccupie = GetComponent<RobotCarrying>().isCarryingMagnet;

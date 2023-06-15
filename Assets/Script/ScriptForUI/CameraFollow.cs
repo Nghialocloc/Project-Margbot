@@ -8,7 +8,7 @@ public class CameraFollow : MonoBehaviour
     [Header("Camare zone")]
     [SerializeField] private float boundX = 20f;
     [SerializeField] private float boundY = 14f;
-    [Header("Change the center camera")]
+    [Header("Change the center camera")] // Broken right now so don't use it
     [SerializeField] [Range(-1f,1f)] private float offSetX = 0;
     [SerializeField] [Range(-1f,1f)] private float offSetY = 0;
 
