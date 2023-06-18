@@ -12839,7 +12839,7 @@ PrefabInstance:
     - target: {fileID: 880592645484775216, guid: 7b33aa9ef75172142a32a3fdec59f965, type: 3}
       propertyPath: magnetJoin
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1119550467}
     - target: {fileID: 9157346739077242996, guid: 7b33aa9ef75172142a32a3fdec59f965, type: 3}
       propertyPath: m_Name
       value: OurMagnet
@@ -12964,6 +12964,11 @@ Transform:
 --- !u!4 &1119550461 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8047681884814817538, guid: 1faab0c8de60a134e83f1a6b543be0a0, type: 3}
+  m_PrefabInstance: {fileID: 8047681885909893887}
+  m_PrefabAsset: {fileID: 0}
+--- !u!255 &1119550467 stripped
+FixedJoint2D:
+  m_CorrespondingSourceObject: {fileID: 8047681884814819064, guid: 1faab0c8de60a134e83f1a6b543be0a0, type: 3}
   m_PrefabInstance: {fileID: 8047681885909893887}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1181480897
@@ -14590,6 +14595,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709580755}
   m_CullTransparentMesh: 1
+--- !u!50 &1768559812 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 9157346739077242997, guid: 7b33aa9ef75172142a32a3fdec59f965, type: 3}
+  m_PrefabInstance: {fileID: 1073784752}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1847528861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16208,7 +16218,7 @@ PrefabInstance:
     - target: {fileID: 8047681884814819062, guid: 1faab0c8de60a134e83f1a6b543be0a0, type: 3}
       propertyPath: Magnet
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1768559812}
     - target: {fileID: 8047681884814819062, guid: 1faab0c8de60a134e83f1a6b543be0a0, type: 3}
       propertyPath: magnetCollider
       value: 

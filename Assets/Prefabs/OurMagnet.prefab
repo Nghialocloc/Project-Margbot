@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwPower: 0.75
+  maxDistance: {x: 30, y: 50}
+  gravityMutiple: 2
+  velocityDiv: 1
   magnetJoin: {fileID: 0}
-  maxDistance: {x: 30, y: 100}
-  gravityMutiple: 3
-  velocityDiv: 1.25
