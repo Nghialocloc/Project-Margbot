@@ -180,6 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSlider: {fileID: 444114344}
   sfxSlider: {fileID: 688798813}
+  imageQuality: {fileID: 1348419889}
 --- !u!114 &27316342
 MonoBehaviour:
   m_ObjectHideFlags: 0

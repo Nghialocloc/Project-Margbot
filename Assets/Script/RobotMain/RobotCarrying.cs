@@ -15,6 +15,14 @@ public class RobotCarrying : MonoBehaviour
     [SerializeField] private BoxCollider2D robotCollider;
     [SerializeField] private BoxCollider2D checkCollider;
     [SerializeField] private Rigidbody2D Magnet;
+    [SerializeField] private TrajectoryLine Joint2D;
+
+    private void Awake()
+    {
+        Magnet = GameObject.FindGameObjectWithTag("Magnet").GetComponent<Rigidbody2D>();
+        Joint2D = GameObject.FindGameObjectWithTag("Magnet").GetComponent<TrajectoryLine>();
+        Joint2D.magnetJoin = GetComponent<FixedJoint2D>();
+    }
 
     // Player can not collide with the magnet
     private void OnCollisionEnter2D(Collision2D collision)

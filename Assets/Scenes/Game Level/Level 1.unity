@@ -12839,14 +12839,14 @@ PrefabInstance:
     - target: {fileID: 880592645484775216, guid: 7b33aa9ef75172142a32a3fdec59f965, type: 3}
       propertyPath: magnetJoin
       value: 
-      objectReference: {fileID: 1119550471}
+      objectReference: {fileID: 0}
     - target: {fileID: 9157346739077242996, guid: 7b33aa9ef75172142a32a3fdec59f965, type: 3}
       propertyPath: m_Name
       value: OurMagnet
       objectReference: {fileID: 0}
     - target: {fileID: 9157346739077242999, guid: 7b33aa9ef75172142a32a3fdec59f965, type: 3}
       propertyPath: m_SortingLayer
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9157346739077243000, guid: 7b33aa9ef75172142a32a3fdec59f965, type: 3}
       propertyPath: m_RootOrder
@@ -12897,11 +12897,6 @@ PrefabInstance:
 --- !u!61 &1073784753 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 5482316399927763519, guid: 7b33aa9ef75172142a32a3fdec59f965, type: 3}
-  m_PrefabInstance: {fileID: 1073784752}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &1073784754 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 9157346739077242997, guid: 7b33aa9ef75172142a32a3fdec59f965, type: 3}
   m_PrefabInstance: {fileID: 1073784752}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1115701608
@@ -12966,19 +12961,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5978673252683524239, guid: a76f94aa285c23d48908e8341078d02c, type: 3}
   m_PrefabInstance: {fileID: 1115701608}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1119550459 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8047681884814817540, guid: 1faab0c8de60a134e83f1a6b543be0a0, type: 3}
-  m_PrefabInstance: {fileID: 8047681885909893887}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1119550461 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8047681884814817538, guid: 1faab0c8de60a134e83f1a6b543be0a0, type: 3}
-  m_PrefabInstance: {fileID: 8047681885909893887}
-  m_PrefabAsset: {fileID: 0}
---- !u!255 &1119550471 stripped
-FixedJoint2D:
-  m_CorrespondingSourceObject: {fileID: 8047681884814819064, guid: 1faab0c8de60a134e83f1a6b543be0a0, type: 3}
   m_PrefabInstance: {fileID: 8047681885909893887}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1181480897
@@ -13537,7 +13522,7 @@ PrefabInstance:
     - target: {fileID: 8290635095172333289, guid: afe6a3e2c3ae6a149a4e1cbea6827ef2, type: 3}
       propertyPath: playerCharacter
       value: 
-      objectReference: {fileID: 1119550459}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afe6a3e2c3ae6a149a4e1cbea6827ef2, type: 3}
 --- !u!1 &1410865363 stripped
@@ -15889,6 +15874,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1181480898}
     m_Modifications:
+    - target: {fileID: 148774562330566857, guid: 3197cd19cf892a440ab2e8f6743be6db, type: 3}
+      propertyPath: isatpointA
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 148774562604956084, guid: 3197cd19cf892a440ab2e8f6743be6db, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -16068,7 +16057,7 @@ PrefabInstance:
     - target: {fileID: 3325424146810646031, guid: e9f17f0e78cef4447bb0dc2daeb94d80, type: 3}
       propertyPath: robotCha
       value: 
-      objectReference: {fileID: 1119550459}
+      objectReference: {fileID: 0}
     - target: {fileID: 3325424146810646031, guid: e9f17f0e78cef4447bb0dc2daeb94d80, type: 3}
       propertyPath: mrManager
       value: 
@@ -16219,7 +16208,7 @@ PrefabInstance:
     - target: {fileID: 8047681884814819062, guid: 1faab0c8de60a134e83f1a6b543be0a0, type: 3}
       propertyPath: Magnet
       value: 
-      objectReference: {fileID: 1073784754}
+      objectReference: {fileID: 0}
     - target: {fileID: 8047681884814819062, guid: 1faab0c8de60a134e83f1a6b543be0a0, type: 3}
       propertyPath: magnetCollider
       value: 

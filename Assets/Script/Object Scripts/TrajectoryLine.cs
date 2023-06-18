@@ -6,7 +6,6 @@ public class TrajectoryLine : MonoBehaviour
 {
     [Header("Throw property")]
     [SerializeField] [Range(0.1f, 1.5f)] private float throwPower = 1f;
-    [SerializeField] private FixedJoint2D magnetJoin;
     [SerializeField] private Vector2 maxDistance;
     private Vector2 distanceThrow;
 
@@ -16,6 +15,7 @@ public class TrajectoryLine : MonoBehaviour
     [Header("Change the velocity throw")]
     [SerializeField] private float velocityDiv = 1.75f;
 
+    public FixedJoint2D magnetJoin;
     private Rigidbody2D magnetBody;
     private LineRenderer lineShow;
     Vector2 DragStartPos;
