@@ -27,6 +27,7 @@ public class ChangeScene : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Out of the game");
-        PlayerPrefs.SetInt("levelReached", 1);
+        //Enable this to reset level
+        //PlayerPrefs.SetInt("levelReached", 1);
     }
 }

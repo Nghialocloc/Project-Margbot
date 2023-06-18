@@ -355,6 +355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNearLadder: 0
   isClimbing: 0
+  isOccupie: 0
   climbingSpeed: 5
 --- !u!1 &8047681885760689251
 GameObject:
@@ -401,7 +402,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05372429, y: 0}
+  m_Offset: {x: -0.06251335, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -412,5 +413,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.7085915, y: 1.21}
+  m_Size: {x: 3.4761162, y: 1.21}
   m_EdgeRadius: 0

@@ -50,12 +50,14 @@ MonoBehaviour:
   - soundName: Theme
     soundClip: {fileID: 8300000, guid: 49ea8b63247c8164abf8396fd607e11d, type: 3}
   - soundName: MainMenu
-    soundClip: {fileID: 8300000, guid: 61864480df356b54490a95f1014f6de0, type: 3}
+    soundClip: {fileID: 8300000, guid: 70fca25b9642691428707cdb23797506, type: 3}
+  - soundName: Secret
+    soundClip: {fileID: 8300000, guid: 838e4bc214ba1be4fa8cb47b596c14e2, type: 3}
   sfxSounds:
   - soundName: LevelComplete
     soundClip: {fileID: 8300000, guid: bcecc300a08bcbe48b8425a77f9df67c, type: 3}
   - soundName: GameOver
-    soundClip: {fileID: 8300000, guid: 37aab0d8e5568fc42a8ca40843b27609, type: 3}
+    soundClip: {fileID: 8300000, guid: 0efd2a48807d15a4cb39e1123defb265, type: 3}
   - soundName: Jump
     soundClip: {fileID: 8300000, guid: 4f778f638685b7d49bc90c58c9aad3c6, type: 3}
   musicSource: {fileID: 8343176070883647572}
