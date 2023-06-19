@@ -30,4 +30,9 @@ public class ChangeScene : MonoBehaviour
         //Enable this to reset level
         //PlayerPrefs.SetInt("levelReached", 1);
     }
+
+    public void ToTheTilte()
+    {
+        SceneManager.LoadScene("Title Scene");
+    }
 }

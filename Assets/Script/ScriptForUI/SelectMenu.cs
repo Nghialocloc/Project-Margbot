@@ -21,9 +21,9 @@ public class SelectMenu : MonoBehaviour
     }
 
     // Nut bam de chuyen toi level do
-    public void LevelSelect(int level)
+    public void LevelSelect(string level)
     {
-        SceneManager.LoadScene("Level " + level.ToString());
+        SceneManager.LoadScene(level);
         AudioManager.Instance.PlayMusic("Theme");
     }
 }
