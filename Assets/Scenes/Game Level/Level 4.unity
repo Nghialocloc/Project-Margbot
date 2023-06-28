@@ -333,8 +333,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4735519131358571645, guid: 6c219b3fea0d9614d983e3f9e2ca93fb, type: 3}
-      propertyPath: m_AngularDrag
-      value: 100
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 4f876d83b708e1f4cbdb0d4842e421b3, type: 2}
+    - target: {fileID: 4735519131358571645, guid: 6c219b3fea0d9614d983e3f9e2ca93fb, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735519131358571646, guid: 6c219b3fea0d9614d983e3f9e2ca93fb, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c219b3fea0d9614d983e3f9e2ca93fb, type: 3}
